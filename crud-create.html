@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a new user</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <center>
+    <h1>Create a new user</h1>
+    <form method="POST" action="{{ url_for('create') }}">
+        <p>Name: <input type="text" name="name" placeholder = "Enter your Name" required></p>
+        <p>Email: <input type="email" name="email" placeholder = "Enter your mail id" required></p>
+        <p><input type="submit" value="Create"></p>
+    </form>
+    <!-- Use a form with a button instead of a link -->
+    <form>
+        <!-- Use formaction and formmethod attributes to specify the URL and the HTTP method -->
+        <button type="submit" formaction="{{ url_for('index') }}" formmethod="GET">Back to home page</button>
+    </form>
+</center>
+</body>
+</html>
+
